@@ -3,7 +3,7 @@ package com.anest.iad591.dto;
 import lombok.Data;
 
 @Data
-public class TemperatureDTO {
+public class ParameterDTO {
     private String day;
     private String month;
     private String year;

@@ -1,6 +1,6 @@
 package com.anest.iad591.service;
 
-import com.anest.iad591.dto.TemperatureDTO;
+import com.anest.iad591.dto.ParameterDTO;
 import com.anest.iad591.entity.Temperature;
 import com.anest.iad591.repository.TemperatureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,35 +26,35 @@ public class TemperatureService {
         return temperatureRepository.findByDayAndMonthAndYear(day, month, year);
     }
 
-    public Temperature saveTemperature(TemperatureDTO temperatureDTO) {
+    public Temperature saveTemperature(ParameterDTO parameterDTO) {
         Temperature temperature = new Temperature();
-        temperature.setDay(temperatureDTO.getDay());
-        temperature.setMonth(temperatureDTO.getMonth());
-        temperature.setYear(temperatureDTO.getYear());
-        temperature.setZeroHour(temperatureDTO.getZeroHour());
-        temperature.setOneHour(temperatureDTO.getOneHour());
-        temperature.setTwoHour(temperatureDTO.getTwoHour());
-        temperature.setThreeHour(temperatureDTO.getThreeHour());
-        temperature.setFourHour(temperatureDTO.getFourHour());
-        temperature.setFiveHour(temperatureDTO.getFiveHour());
-        temperature.setSixHour(temperatureDTO.getSixHour());
-        temperature.setSevenHour(temperatureDTO.getSevenHour());
-        temperature.setEightHour(temperatureDTO.getEightHour());
-        temperature.setNineHour(temperatureDTO.getNineHour());
-        temperature.setTenHour(temperatureDTO.getTenHour());
-        temperature.setElevenHour(temperatureDTO.getElevenHour());
-        temperature.setTwelveHour(temperatureDTO.getTwelveHour());
-        temperature.setThirteenHour(temperatureDTO.getThirteenHour());
-        temperature.setFourteenHour(temperatureDTO.getFourteenHour());
-        temperature.setFifteenHour(temperatureDTO.getFifteenHour());
-        temperature.setSixteenHour(temperatureDTO.getSixteenHour());
-        temperature.setSeventeenHour(temperatureDTO.getSeventeenHour());
-        temperature.setEighteenHour(temperatureDTO.getEighteenHour());
-        temperature.setNineteenHour(temperatureDTO.getNineteenHour());
-        temperature.setTwentyHour(temperatureDTO.getTwentyHour());
-        temperature.setTwentyOneHour(temperatureDTO.getTwentyOneHour());
-        temperature.setTwentyTwoHour(temperatureDTO.getTwentyTwoHour());
-        temperature.setTwentyThreeHour(temperatureDTO.getTwentyThreeHour());
+        temperature.setDay(parameterDTO.getDay());
+        temperature.setMonth(parameterDTO.getMonth());
+        temperature.setYear(parameterDTO.getYear());
+        temperature.setZeroHour(parameterDTO.getZeroHour());
+        temperature.setOneHour(parameterDTO.getOneHour());
+        temperature.setTwoHour(parameterDTO.getTwoHour());
+        temperature.setThreeHour(parameterDTO.getThreeHour());
+        temperature.setFourHour(parameterDTO.getFourHour());
+        temperature.setFiveHour(parameterDTO.getFiveHour());
+        temperature.setSixHour(parameterDTO.getSixHour());
+        temperature.setSevenHour(parameterDTO.getSevenHour());
+        temperature.setEightHour(parameterDTO.getEightHour());
+        temperature.setNineHour(parameterDTO.getNineHour());
+        temperature.setTenHour(parameterDTO.getTenHour());
+        temperature.setElevenHour(parameterDTO.getElevenHour());
+        temperature.setTwelveHour(parameterDTO.getTwelveHour());
+        temperature.setThirteenHour(parameterDTO.getThirteenHour());
+        temperature.setFourteenHour(parameterDTO.getFourteenHour());
+        temperature.setFifteenHour(parameterDTO.getFifteenHour());
+        temperature.setSixteenHour(parameterDTO.getSixteenHour());
+        temperature.setSeventeenHour(parameterDTO.getSeventeenHour());
+        temperature.setEighteenHour(parameterDTO.getEighteenHour());
+        temperature.setNineteenHour(parameterDTO.getNineteenHour());
+        temperature.setTwentyHour(parameterDTO.getTwentyHour());
+        temperature.setTwentyOneHour(parameterDTO.getTwentyOneHour());
+        temperature.setTwentyTwoHour(parameterDTO.getTwentyTwoHour());
+        temperature.setTwentyThreeHour(parameterDTO.getTwentyThreeHour());
         return temperatureRepository.save(temperature);
     }
 }
