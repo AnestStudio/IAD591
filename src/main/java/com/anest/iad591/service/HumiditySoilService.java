@@ -18,11 +18,11 @@ public class HumiditySoilService {
         this.humiditySoilRepository = humiditySoilRepository;
     }
 
-    public List<HumiditySoil> getTemperaturesByMonth(String month, String year) {
+    public List<HumiditySoil> getHumiditySoilByMonth(String month, String year) {
         return humiditySoilRepository.findByMonthAndYear(month, year);
     }
 
-    public HumiditySoil getTemperaturesByDate(String day, String month, String year) {
+    public HumiditySoil getHumiditySoilByDate(String day, String month, String year) {
         return humiditySoilRepository.findByDayAndMonthAndYear(day, month, year);
     }
 

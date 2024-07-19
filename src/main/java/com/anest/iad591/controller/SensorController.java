@@ -18,16 +18,15 @@ import java.util.Map;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/api/temperatures")
-
-public class TemperatureController {
+@RequestMapping("/api")
+public class SensorController {
 
     private final TemperatureService temperatureService;
     private final HumiditySoilService humiditySoilService;
     private final HumidityAirService humidityAirService;
 
     @Autowired
-    public TemperatureController(
+    public SensorController(
             TemperatureService temperatureService,
             HumiditySoilService humiditySoilService,
             HumidityAirService humidityAirService
@@ -37,7 +36,7 @@ public class TemperatureController {
         this.humidityAirService = humidityAirService;
     }
 
-    @GetMapping("/month")
+    @GetMapping("/temperatures/month")
     public List<Temperature> getTemperaturesByMonth(
             @RequestParam String month,
             @RequestParam String year
@@ -45,15 +44,15 @@ public class TemperatureController {
         return temperatureService.getTemperaturesByMonth(month, year);
     }
 
-    @GetMapping("/day")
+    @GetMapping("/temperatures/day")
     public ResponseEntity<Object> getTemperaturesByDate(
             @RequestParam String day,
             @RequestParam String month,
             @RequestParam String year
     ) {
         Temperature temperature = temperatureService.getTemperaturesByDate(day, month, year);
-        HumiditySoil humiditySoil = humiditySoilService.getTemperaturesByDate(day, month, year);
-        HumidityAir humidityAir = humidityAirService.getTemperaturesByDate(day, month, year);
+        HumiditySoil humiditySoil = humiditySoilService.getHumiditySoilByDate(day, month, year);
+        HumidityAir humidityAir = humidityAirService.getHumidityAirByDate(day, month, year);
         Map<String, Object> map = new HashMap<>();
         map.put("temperature", temperature);
         map.put("humiditySoil", humiditySoil);

@@ -18,15 +18,15 @@ public class HumidityAirService {
         this.humidityAirRepository = humidityAirRepository;
     }
 
-    public List<HumidityAir> getTemperaturesByMonth(String month, String year) {
+    public List<HumidityAir> getHumidityAirByMonth(String month, String year) {
         return humidityAirRepository.findByMonthAndYear(month, year);
     }
 
-    public HumidityAir getTemperaturesByDate(String day, String month, String year) {
+    public HumidityAir getHumidityAirByDate(String day, String month, String year) {
         return humidityAirRepository.findByDayAndMonthAndYear(day, month, year);
     }
 
-    public HumidityAir saveTemperature(ParameterDTO parameterDTO) {
+    public HumidityAir saveHumidityAir(ParameterDTO parameterDTO) {
         HumidityAir humidityAir = new HumidityAir();
         humidityAir.setDay(parameterDTO.getDay());
         humidityAir.setMonth(parameterDTO.getMonth());
