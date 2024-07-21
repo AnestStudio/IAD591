@@ -21,3 +21,9 @@ create table sensor_type
     type      int                   not null,
     type_name varchar(100)          not null
 );
+
+create table image
+(
+    id   int auto_increment primary key,
+    name varchar(300)          not null
+);
